@@ -51,9 +51,11 @@ public class pary_liczb{
          while(in.hasNextLine()){
              l1=in.nextInt();
             l2 =in.nextInt();
-           
+           if(liczba1%liczba2==0 || liczba2%liczba1==0);
+           ile_wiek++
              System.out.println(l1+"aaa"+l2);
         }
+        
 
   
         
