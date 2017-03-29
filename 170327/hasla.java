@@ -10,10 +10,19 @@ public class hasla{
        while(in.hasNextLine())
        {String text=in.nextLine();
        if (text.length()%2==0) lp++; else ln++;
-          
-          
-       }
-      // System.out.println("Liczba parzysta "+lp);
+          int j,i;
+          String haslo;
+          char dane;
+          char odpowiedz;
+          dane.open("dane.txt");
+          odpowiedz.open("zadanie4.txt");
+          while (dane.good()){
+              boolean palindrom=true;
+              for(i=0;j=haslo.size-1;i<haslo.size()/2;i++,j--){
+                  if(haslo[i]!=haslo[j]){
+                  palindrom=false;
+                  }
+          // System.out.println("Liczba parzysta "+lp);
       
       // System.out.println("Liczba nieparzysta "+ln);
         PrintWriter zapis= new PrintWriter("wyniki4a.txt");
