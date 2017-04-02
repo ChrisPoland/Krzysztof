@@ -1,33 +1,59 @@
-import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.File;
 import java.util.Scanner;
 import java.io.PrintWriter;
 public class hasla{
-    public static void main(String[]args)throws FileNotFoundException{
-        File file=new File("hasla.txt");
-        Scanner in= new Scanner(file);
-         int lp=0, ln=0;
-       while(in.hasNextLine())
-       {String text=in.nextLine();
-       if (text.length()%2==0) lp++; else ln++;
-          int j,i;
-          String haslo;
-          char dane;
-          char odpowiedz;
-          dane.open("dane.txt");
-          odpowiedz.open("zadanie4.txt");
-          while (dane.good()){
-              boolean palindrom=true;
-              for(i=0;j=haslo.size-1;i<haslo.size()/2;i++,j--){
-                  if(haslo[i]!=haslo[j]){
-                  palindrom=false;
-                  }
-          // System.out.println("Liczba parzysta "+lp);
-      
-      // System.out.println("Liczba nieparzysta "+ln);
-        PrintWriter zapis= new PrintWriter("wyniki4a.txt");
-        zapis.println("Liczba parzysta "+lp);
-          zapis.println("Liczba nieparzysta "+ln);
-        zapis.close();
+    int hasla(String haslo,int q){
+        int z=0;
+        for(int i=0; i<q/2; i++){
+        if(haslo.charAt(i) == haslo.charAt(q - 1 - i)){
+            z = z + 1;
+        }
+        else z = 0;
+        }
+        if(z == q/2){
+            return 1;
+        }
+        return 0;
     }
+    int z2(String haslo, int q){
+        int z1=0;
+        for(int i=0; i<q - 1; i++){
+        if((int)haslo.charAt(i) + (int)haslo.charAt(i + 1) == 220){
+            z1 = 1;
+        }
+    }
+            return z1;
+        }
+    public static void main(String[] args) throws FileNotFoundException{
+        hasla funkcje = new hasla();
+        File file = new File("hasla.txt");
+        Scanner in = new Scanner(file);
+        int parz=0,nieparz=0;
+        PrintWriter zapis = new PrintWriter("wynik4a.txt");
+        PrintWriter zapis2 = new PrintWriter("wynik4b.txt");
+        PrintWriter zapis3 = new PrintWriter("wynSik4c.txt");
+    for(int j=0; j<200; j++){
+        String haslo = in.nextLine();
+        int q = haslo.length();
+
+        if(q%2==0){
+            parz=parz + 1;
+        }
+        else{
+            nieparz=nieparz + 1;
+        }
+      if(funkcje.hasla(haslo,q) == 1){
+          zapis2.println(haslo);
+      }
+      if(funkcje.z2(haslo,q) == 1){
+          zapis3.println(haslo);
+      }
+    }
+    zapis.println("hasla parzyste: " + parz);
+    zapis.println("hasla nieparzyste: " + nieparz);
+    zapis.close();
+    zapis2.close();
+    zapis3.close();
+}
 }
