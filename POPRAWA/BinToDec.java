@@ -7,3 +7,4 @@ public class BinToDec{
         System.out.println("Liczba decymalna:"+Integer.parseInt(binarna,2));
     }
 }
+//zamienia na dziesietny, wpisuje 4 na przyklad liczy z czworkowego na dzisietny system

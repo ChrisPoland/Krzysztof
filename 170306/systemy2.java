@@ -1,4 +1,6 @@
 public class systemy2{
+    
+    
     String BinToDec (int n){
         String tekst="";
         while (n>0){ 

@@ -1,25 +1,18 @@
 public class liczby_pierwsze{
-
-public static void main(String[] args){ 
-Scanner dane=new Scanner(System.in);
-
-int x=dane.next.Int();
-boolean liczba_pierwsza=true;
-
-for(int i=2; i*i<=x;i++)
-
-if(x%i==0)
-
-liczba_pierwsza=false
-
-
-
-if(liczba_pierwsza)
-
-
-
-System.out.println("Tak");
-else
-System.out.println("Nie");
+boolean l_pierwsza(int l1){
+    if(l1<2)
+    return false;
+    for(int i=2;i<+Math.sqrt(l1);i++)
+    if(l1%i==0)
+    return false;
+    return true;
+}
+public static void main(String[]args){
+    liczby_pierwsze=new liczby_pierwsze();
+    if(l1(Integer.parseInt(args[0])==false)
+    System.out.println("Ta liczba nie jest pierwsza");
+    else
+    System.out.println("Ta liczba jest pierwsza");
 }
 }
+
